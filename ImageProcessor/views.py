@@ -56,20 +56,26 @@ class ResultsView(generics.ListAPIView):
     def get(self, request, *args, **kwargs):
         # TODO: hardcoded data
 
-        floor_plan_1 = convert_image_to_base64("processed/9_multi.png")
-        floor_plan_2 = convert_image_to_base64("processed/98_multi.png")
+        original_floor_plan_1 = convert_image_to_base64("processed/9_wall.png")
+        processed_floor_plan_1 = convert_image_to_base64("processed/9_multi.png")
+        original_floor_plan_2 = convert_image_to_base64("processed/98_wall.png")
+        processed_floor_plan_2 = convert_image_to_base64("processed/98_multi.png")
         data = [
             {
-                "floor_plan_name": "9_multi.png",
-                "floor_plan_image": floor_plan_1.decode(),
+                "original_floor_plan_name": "9_wall.png",
+                "original_floor_plan_image": original_floor_plan_1.decode(),
+                "processed_floor_plan_name": "9_multi.png",
+                "processed_floor_plan_image": processed_floor_plan_1.decode(),
                 "area": 66,
                 "compartments": 66,
                 "windows": 66,
                 "doors": 66
             },
             {
-                "floor_plan_name": "98_multi.png",
-                "floor_plan_image": floor_plan_2.decode(),
+                "original_floor_plan_name": "98_wall.png",
+                "original_floor_plan_image": original_floor_plan_2.decode(),
+                "processed_floor_plan_name": "98_multi.png",
+                "processed_floor_plan_image": processed_floor_plan_2.decode(),
                 "area": 55,
                 "compartments": 55,
                 "windows": 55,
