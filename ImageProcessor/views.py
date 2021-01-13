@@ -1,6 +1,7 @@
 import os
 import time
 from wsgiref.util import FileWrapper
+import base64
 
 import cv2
 from django.core.files.base import ContentFile
@@ -37,6 +38,11 @@ def load_first_n_images_from_folder(number_of_images, folder):
     return images
 
 
+def convert_image_to_base64(img_name):
+    with open(img_name, "rb") as img_file:
+        return base64.b64encode(img_file.read())
+
+
 class ResultsView(generics.ListAPIView):
     # Trigger processing
     # Processing 2.5 seconds
@@ -49,22 +55,27 @@ class ResultsView(generics.ListAPIView):
 
     def get(self, request, *args, **kwargs):
         # TODO: hardcoded data
-        data = [{
-            "floor_plan": "8_multi.png",
-            "area": 66,
-            "compartments": 66,
-            "windows": 66,
-            "doors": 66
-        },
+
+        floor_plan_1 = convert_image_to_base64("processed/9_multi.png")
+        floor_plan_2 = convert_image_to_base64("processed/98_multi.png")
+        data = [
             {
-                "floor_plan": "9_multi.png",
+                "floor_plan_name": "9_multi.png",
+                "floor_plan_image": floor_plan_1.decode(),
+                "area": 66,
+                "compartments": 66,
+                "windows": 66,
+                "doors": 66
+            },
+            {
+                "floor_plan_name": "98_multi.png",
+                "floor_plan_image": floor_plan_2.decode(),
                 "area": 55,
                 "compartments": 55,
                 "windows": 55,
                 "doors": 55
             }
         ]
-
         return JsonResponse(data, safe=False, status=200)
 
 

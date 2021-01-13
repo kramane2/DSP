@@ -27,5 +27,6 @@ urlpatterns = [
     path('images/process', ResultsView.as_view()),
     # GET
     # Returns CSV file
-    path('images/results', CsvView.as_view())
+    path('images/results', CsvView.as_view()),
+    path('test', CsvView.as_view())
 ]
