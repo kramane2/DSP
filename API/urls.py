@@ -1,4 +1,4 @@
-"""ImageProcessor URL Configuration
+"""API URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,15 +15,16 @@ Including another URLconf
 """
 from django.urls import path
 
-from ImageProcessor.views import ImageUploadView, ResultsView, CsvView
+from API import views
+from API.views import ImageUploadView, ResultsView, CsvView
 
 urlpatterns = [
+    path('', views.index),
     # POST
     # Input: list of images
     # Returns OK
     path('images/upload', ImageUploadView.as_view(), name='image-list'),
     # GET
-    # Should return list of ImageProcessor.ProcessedImageModel
     path('images/process', ResultsView.as_view()),
     # GET
     # Returns CSV file
