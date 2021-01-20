@@ -60,8 +60,6 @@ ROOT_URLCONF = 'API.urls'
 
 FRONT_END_DIR = os.path.join(BASE_DIR, 'front_end')
 
-STATIC_URL = 'front_end/static/'
-STATIC_ROOT = os.path.join(FRONT_END_DIR, 'static')
 
 TEMPLATES = [
     {
@@ -127,4 +125,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = '/front_end'
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join('front_end/static'), )
