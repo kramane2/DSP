@@ -1,16 +1,14 @@
 import os
 os.chdir('/d2/studies/TF2DeepFloorplan')
-import tensorflow as tf
 import io
-import tqdm
-from net import *
-from loss import *
-from data import *
+from floor_plan_model.net import *
+from floor_plan_model.loss import *
+from floor_plan_model.data import *
 import argparse
 import pandas as pd
 from PIL import Image
 from datetime import datetime
-from skimage.io import imread, imsave
+from skimage.io import imsave
 from skimage import img_as_float, img_as_ubyte
 import matplotlib.pyplot as plt
 os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
@@ -18,7 +16,7 @@ os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 def init(config):
     """Initialize the model (via net.py), load the data (via data.py) using a Keras Adam optimizer.
     You can see other optimizer options you may want to try out at: https://keras.io/api/optimizers/.
-    The SGD optimizer is probably the most commonly used, though it seems more modern models have been
+    The SGD optimizer is probably the most commonly used, though it seems more modern model have been
     switching to Adam. The way it is now is probably ideal but this is something you can play with or discuss
     in your write-up.
     

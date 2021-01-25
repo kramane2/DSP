@@ -1,7 +1,7 @@
 python 3.7.4
 ```pip install -r requirements.txt```
 
-First download the folder Jan12 with model to `floor_plan_model/models` folder
+First download the model content to `floor_plan_model/model` folder
 https://drive.google.com/drive/folders/1t6lDv82NXPGEUdZSu7gxjn2mg00JAwd9?usp=sharing
 
 ```python manage.py runserver```  

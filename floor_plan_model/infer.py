@@ -21,7 +21,7 @@ os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 def init(config):
     """Initialize the model (via net.py), load the data (via data.py) using a Keras Adam optimizer.
     You can see other optimizer options you may want to try out at: https://keras.io/api/optimizers/.
-    The SGD optimizer is probably the most commonly used, though it seems more modern models have been
+    The SGD optimizer is probably the most commonly used, though it seems more modern model have been
     switching to Adam. The way it is now is probably ideal but this is something you can play with or discuss
     in your write-up.
     
