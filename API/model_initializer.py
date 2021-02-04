@@ -1,4 +1,5 @@
-from floor_plan_model.data import *
+import os
+
 from floor_plan_model.net import *
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
