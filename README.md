@@ -1,8 +1,11 @@
-python 3.7.4
-```pip install -r requirements.txt```
+## DSP: Fire Risk Profiles
 
-First download the model content to `floor_plan_model/model` folder
-https://drive.google.com/drive/folders/1t6lDv82NXPGEUdZSu7gxjn2mg00JAwd9?usp=sharing
+#### Group E4
 
-```python manage.py runserver```  
-Example http://localhost:8000/images/upload  
+### Image Recognition on Floor Plans as Input for a Fire Risk Model
+
+Model code in floor_plan_model folder. Folder contains README
+
+Application code in API folder. Folder contains README
+
+Minified JavaScript in front_end folder.
